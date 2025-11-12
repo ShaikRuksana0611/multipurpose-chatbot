@@ -1,0 +1,15 @@
+# Web Framework
+flask==2.3.3
+flask-cors==4.0.0
+
+# Machine Learning (compatible versions)
+scikit-learn==1.2.2
+numpy==1.24.3
+nltk==3.8.1
+
+# Utilities
+python-dotenv==1.0.0
+joblib==1.2.0
+
+# For data handling
+pandas==2.0.3

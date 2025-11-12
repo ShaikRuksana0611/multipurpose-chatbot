@@ -1,0 +1,54 @@
+app:
+  name: "Multi-Purpose Chatbot"
+  version: "1.0.0"
+  debug: false
+  secret_key: "your-production-secret-key-here"
+
+server:
+  host: "0.0.0.0"
+  port: 5000
+  workers: 4
+
+chatbot:
+  confidence_threshold: 0.3
+  max_context_length: 10
+  response_timeout: 30
+  applications:
+    - customer_support
+    - college_helpdesk
+    - hr_recruitment
+    - personal_assistant
+
+nlp:
+  max_features: 5000
+  stop_words: "english"
+  min_pattern_length: 2
+
+data:
+  data_file: "backend/data/chatbot_data.json"
+  models_dir: "backend/data/models/"
+  backup_dir: "backend/data/backups/"
+
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "backend/logs/chatbot.log"
+  max_file_size: 10485760
+  backup_count: 5
+
+security:
+  cors_origins:
+    - "*"
+  rate_limit_per_minute: 100
+  api_key_required: false
+
+training:
+  auto_retrain: true
+  min_confidence_for_feedback: 0.2
+  max_training_examples: 1000
+
+ui:
+  theme: "default"
+  enable_voice: false
+  auto_scroll: true
+  show_confidence: true
